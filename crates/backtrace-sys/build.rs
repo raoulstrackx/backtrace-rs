@@ -23,6 +23,7 @@ fn main() {
 
     let mut build = cc::Build::new();
     build
+        .target("x86_64-unknown-linux-gnu")
         .include("src/libbacktrace")
         .include(&out_dir)
         .warnings(false)
