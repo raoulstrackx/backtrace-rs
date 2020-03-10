@@ -24,6 +24,9 @@ fn main() {
     let mut build = cc::Build::new();
     build
         .target("x86_64-unknown-linux-gnu")
+        .flag("-mlvi-hardening")
+        .flag("-mllvm")
+        .flag("-x86-lvi-load-inline-asm")
         .include("src/libbacktrace")
         .include(&out_dir)
         .warnings(false)
